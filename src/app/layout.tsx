@@ -75,6 +75,10 @@ export const metadata: Metadata = {
       "max-video-preview": -1,
     },
   },
+
+  other: {
+    "p:domain_verify": "d19dac483384a4758ad93a7c96cdd5f4",
+  },
 };
 
 export default function RootLayout({
