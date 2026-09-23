@@ -6,6 +6,12 @@ import ProductCard from "@/components/ui/ProductCard";
 import { products } from "@/data/products";
 
 export default function TrendingFinds() {
+  const scrollToCategories = () => {
+    document
+      .getElementById("categories")
+      ?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <section className="relative z-10 border-t border-white/10 px-6 py-28 lg:px-12">
       <div className="mx-auto max-w-[1440px]">
@@ -23,8 +29,12 @@ export default function TrendingFinds() {
             </h2>
           </div>
 
-          <button className="flex items-center gap-2 text-sm text-white/55 transition hover:text-white">
-            View all finds <ArrowRight size={16} />
+          <button
+            type="button"
+            onClick={scrollToCategories}
+            className="flex items-center gap-2 text-sm text-white/55 transition hover:text-white"
+          >
+            Explore categories <ArrowRight size={16} />
           </button>
         </div>
 
@@ -48,12 +58,12 @@ export default function TrendingFinds() {
             >
               <ProductCard product={product} />
             </motion.div>
-            
           ))}
         </motion.div>
+
         <p className="mt-6 text-[11px] leading-5 text-white/35">
-  As an Amazon Associate I earn from qualifying purchases.
-</p>
+          As an Amazon Associate I earn from qualifying purchases.
+        </p>
       </div>
     </section>
   );

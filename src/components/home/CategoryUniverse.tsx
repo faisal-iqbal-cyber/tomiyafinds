@@ -50,7 +50,7 @@ const categories = [
 
 export default function CategoryUniverse() {
   return (
-    <section className="relative z-10 px-6 py-28 lg:px-12">
+    <section id="categories" className="relative z-10 px-6 py-28 lg:px-12">
       <div className="mx-auto max-w-[1440px]">
         {/* Section heading */}
         <motion.div
