@@ -1,27 +1,44 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "motion/react";
+import { ArrowRight, Sparkles, Menu } from "lucide-react";
+
 import TrendingFinds from "@/components/home/TrendingFinds";
 import CategoryUniverse from "@/components/home/CategoryUniverse";
-import {
-  ArrowRight,
-  Search,
-  ShoppingBag,
-  Sparkles,
-  Menu,
-} from "lucide-react";
+import GuidesSection from "@/components/home/GuidesSection";
+import MobileMenu from "@/components/layout/MobileMenu";
 
 const categories = [
-  "Women",
-  "Men",
-  "Kids",
-  "Home",
-  "Tech",
-  "Beauty",
-  "Gifts",
+  { name: "Women", href: "/women" },
+  { name: "Men", href: "/men" },
+  { name: "Kids", href: "/kids" },
+  { name: "Home", href: "/home" },
+  { name: "Tech", href: "/tech" },
+  { name: "Beauty", href: "/beauty" },
+];
+
+const navigation = [
+  { name: "Discover", href: "#categories" },
+  { name: "Trending", href: "#trending" },
+  { name: "Collections", href: "#categories" },
+  { name: "Guides", href: "#guides" },
 ];
 
 export default function Home() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
   return (
     <main className="min-h-screen overflow-hidden bg-[#080808] text-white">
       {/* Ambient background */}
@@ -38,42 +55,37 @@ export default function Home() {
 
       {/* Navigation */}
       <header className="relative z-30 mx-auto flex max-w-[1440px] items-center justify-between px-6 py-6 lg:px-12">
-        <a href="#" className="group">
-          <div className="text-2xl font-black tracking-[0.28em]">TOMIYA</div>
+        <a href="/" className="group">
+          <div className="text-2xl font-black tracking-[0.28em]">
+            TOMIYA
+          </div>
+
           <div className="mt-1 text-[8px] tracking-[0.36em] text-white/40">
             SMART FINDS
           </div>
         </a>
 
         <nav className="hidden items-center gap-8 text-sm text-white/60 lg:flex">
-          {["Discover", "Trending", "Collections", "Guides"].map((item) => (
+          {navigation.map((item) => (
             <a
-              key={item}
-              href="#"
-              className="transition hover:text-white"
+              key={item.name}
+              href={item.href}
+              className="transition duration-300 hover:text-white"
             >
-              {item}
+              {item.name}
             </a>
           ))}
         </nav>
 
-        <div className="flex items-center gap-2">
-          <button
-            aria-label="Search"
-            className="icon-button hidden sm:grid"
-          >
-            <Search size={18} />
-          </button>
-          <button
-            aria-label="Saved finds"
-            className="icon-button hidden sm:grid"
-          >
-            <ShoppingBag size={18} />
-          </button>
-          <button aria-label="Menu" className="icon-button">
-            <Menu size={19} />
-          </button>
-        </div>
+        {/* Mobile / category navigation */}
+        <button
+          aria-label="Open navigation"
+          aria-expanded={menuOpen}
+          className="icon-button"
+          onClick={() => setMenuOpen(true)}
+        >
+          <Menu size={19} />
+        </button>
       </header>
 
       {/* Hero */}
@@ -97,6 +109,7 @@ export default function Home() {
               className="max-w-4xl text-[clamp(3.8rem,8vw,8rem)] font-medium leading-[0.88] tracking-[-0.065em]"
             >
               Find something
+
               <span className="hero-gradient block font-serif italic">
                 worth having.
               </span>
@@ -112,25 +125,34 @@ export default function Home() {
               finds for you, your home, and everyone you shop for.
             </motion.p>
 
+            {/* Hero CTAs */}
             <motion.div
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.42 }}
               className="mt-9 flex flex-wrap gap-3"
             >
-              <button className="primary-button group">
+              <button
+                onClick={() => scrollToSection("categories")}
+                className="primary-button group"
+              >
                 Explore the finds
+
                 <ArrowRight
                   size={17}
                   className="transition-transform group-hover:translate-x-1"
                 />
               </button>
 
-              <button className="secondary-button">
+              <button
+                onClick={() => scrollToSection("trending")}
+                className="secondary-button"
+              >
                 What&apos;s trending
               </button>
             </motion.div>
 
+            {/* Category pills */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -138,14 +160,18 @@ export default function Home() {
               className="mt-12 flex flex-wrap gap-2"
             >
               {categories.map((category) => (
-                <button key={category} className="category-pill">
-                  {category}
-                </button>
+                <a
+                  key={category.name}
+                  href={category.href}
+                  className="category-pill"
+                >
+                  {category.name}
+                </a>
               ))}
             </motion.div>
           </div>
 
-          {/* Visual object */}
+          {/* Hero visual */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -200,14 +226,35 @@ export default function Home() {
               >
                 <span>02</span>
                 <strong>Worth it</strong>
-                <small>Finds chosen for value &amp; usefulness.</small>
+                <small>
+                  Finds chosen for value &amp; usefulness.
+                </small>
               </motion.div>
             </div>
           </motion.div>
         </div>
       </section>
-      <TrendingFinds />
-      <CategoryUniverse />
+
+      {/* Trending products */}
+      <div id="trending" className="scroll-mt-6">
+        <TrendingFinds />
+      </div>
+
+      {/* Category collections */}
+      <div id="categories" className="scroll-mt-6">
+        <CategoryUniverse />
+      </div>
+
+      {/* Editorial guides */}
+      <div id="guides" className="scroll-mt-6">
+        <GuidesSection />
+      </div>
+
+      {/* Full-screen navigation */}
+      <MobileMenu
+        open={menuOpen}
+        onClose={() => setMenuOpen(false)}
+      />
     </main>
   );
 }

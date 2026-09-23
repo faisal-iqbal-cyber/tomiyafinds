@@ -5,7 +5,7 @@ import { ArrowUpRight } from "lucide-react";
 import type { Product } from "@/data/products";
 
 export default function ProductCard({ product }: { product: Product }) {
-  return (
+  const CardContent = (
     <motion.article
       whileHover={{ y: -8 }}
       transition={{ duration: 0.3 }}
@@ -14,39 +14,86 @@ export default function ProductCard({ product }: { product: Product }) {
       <div
         className={`relative aspect-[4/5] overflow-hidden rounded-[28px] border border-white/10 bg-gradient-to-br ${product.gradient}`}
       >
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,.22),transparent_35%)]" />
+        {/* Ambient glow for placeholder cards */}
+        {!product.image && (
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,.22),transparent_35%)]" />
+        )}
 
-        <span className="absolute left-6 top-6 text-[10px] tracking-[.25em] text-white/55">
+        {/* Product image / placeholder symbol */}
+        {product.image ? (
+          <motion.img
+            src={product.image}
+            alt={product.name}
+            className="absolute inset-0 h-full w-full object-cover"
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          />
+        ) : (
+          <motion.div
+            className="absolute inset-0 grid place-items-center text-[110px] font-thin text-white/70"
+            whileHover={{ scale: 1.08, rotate: 4 }}
+            transition={{ duration: 0.5 }}
+          >
+            {product.symbol}
+          </motion.div>
+        )}
+
+        {/* Image readability overlay */}
+        {product.image && (
+          <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/70 via-black/5 to-black/25" />
+        )}
+
+        {/* Eyebrow */}
+        <span className="absolute left-5 top-5 z-20 rounded-full border border-white/15 bg-black/35 px-3 py-2 text-[9px] tracking-[.22em] text-white/80 backdrop-blur-md">
           {product.eyebrow}
         </span>
 
-        <motion.div
-          className="absolute inset-0 grid place-items-center text-[110px] font-thin text-white/70"
-          whileHover={{ scale: 1.08, rotate: 4 }}
-          transition={{ duration: 0.5 }}
-        >
-          {product.symbol}
-        </motion.div>
-
-        <button
-          aria-label={`Explore ${product.name}`}
-          className="absolute right-5 top-5 grid h-11 w-11 place-items-center rounded-full border border-white/15 bg-black/20 opacity-0 backdrop-blur-xl transition group-hover:opacity-100"
-        >
+        {/* Arrow */}
+        <div className="absolute right-5 top-5 z-20 grid h-11 w-11 place-items-center rounded-full border border-white/15 bg-black/35 opacity-0 backdrop-blur-xl transition duration-300 group-hover:opacity-100">
           <ArrowUpRight size={17} />
-        </button>
+        </div>
 
-        <div className="absolute inset-x-4 bottom-4 rounded-[20px] border border-white/10 bg-black/35 p-5 backdrop-blur-xl">
-          <div className="mb-2 flex items-center justify-between">
-            <span className="text-xs text-white/45">{product.category}</span>
-            <span className="text-xs text-[#e1bd8b]">{product.price}</span>
+        {/* Product information */}
+        <div className="absolute inset-x-4 bottom-4 z-20 rounded-[20px] border border-white/10 bg-black/45 p-5 shadow-2xl backdrop-blur-xl">
+          <div className="mb-2 flex items-center justify-between gap-3">
+            <span className="text-xs text-white/50">
+              {product.category}
+            </span>
+
+            <span className="flex items-center gap-1 text-xs text-[#e1bd8b]">
+              {product.price}
+
+              {product.affiliateUrl && (
+                <ArrowUpRight size={12} />
+              )}
+            </span>
           </div>
 
-          <h3 className="text-lg font-medium">{product.name}</h3>
-          <p className="mt-2 text-xs leading-5 text-white/45">
+          <h3 className="text-lg font-medium text-white">
+            {product.name}
+          </h3>
+
+          <p className="mt-2 text-xs leading-5 text-white/50">
             {product.description}
           </p>
         </div>
       </div>
     </motion.article>
   );
+
+  if (product.affiliateUrl) {
+    return (
+      <a
+        href={product.affiliateUrl}
+        target="_blank"
+        rel="sponsored noopener noreferrer"
+        aria-label={`View ${product.name} on Amazon`}
+        className="block"
+      >
+        {CardContent}
+      </a>
+    );
+  }
+
+  return CardContent;
 }

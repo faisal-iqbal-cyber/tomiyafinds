@@ -48,8 +48,12 @@ export default function TrendingFinds() {
             >
               <ProductCard product={product} />
             </motion.div>
+            
           ))}
         </motion.div>
+        <p className="mt-6 text-[11px] leading-5 text-white/35">
+  As an Amazon Associate I earn from qualifying purchases.
+</p>
       </div>
     </section>
   );
