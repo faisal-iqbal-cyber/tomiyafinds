@@ -83,4 +83,18 @@ export const products: Product[] = [
     affiliateUrl: "https://amzn.to/3VeTDOI",
     featured: true,
   },
+  {
+  id: 6,
+  name: "Rechargeable Silicone Facial Cleansing Brush",
+  category: "Beauty",
+  eyebrow: "BEAUTY ROUTINE FIND",
+  price: "View on Amazon",
+  description:
+    "A rechargeable silicone facial cleansing brush with gentle vibration, a warming massage end and a waterproof design for everyday skincare.",
+  gradient: "from-[#d9aaa9] via-[#936c72] to-[#302124]",
+  symbol: "✦",
+  image: "/images/products/facial-cleansing-brush.png",
+  affiliateUrl: "https://amzn.to/4ym5KIu",
+  featured: true,
+},
 ];
