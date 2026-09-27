@@ -125,4 +125,18 @@ export const products: Product[] = [
   affiliateUrl: "https://amzn.to/4yXI2SB",
   featured: true,
 },
+{
+  id: 9,
+  name: "RUNBOX Slim RFID Wallet for Men",
+  category: "Men",
+  eyebrow: "EVERYDAY MEN'S ESSENTIAL",
+  price: "View on Amazon",
+  description:
+    "A slim bifold wallet with RFID-blocking protection, 15 card slots, dual ID windows and a compact design for everyday carry.",
+  gradient: "from-[#454545] via-[#242424] to-[#111111]",
+  symbol: "▰",
+  image: "/images/products/runbox-rfid-wallet.png",
+  affiliateUrl: "https://amzn.to/4daqFpn",
+  featured: true,
+},
 ];
