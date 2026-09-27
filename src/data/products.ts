@@ -97,4 +97,18 @@ export const products: Product[] = [
   affiliateUrl: "https://amzn.to/4ym5KIu",
   featured: true,
 },
+{
+  id: 7,
+  name: "Waterproof Portable Bluetooth Speaker",
+  category: "Tech",
+  eyebrow: "EVERYDAY TECH FIND",
+  price: "View on Amazon",
+  description:
+    "A compact 15W Bluetooth speaker with an IP67 waterproof and dustproof design, dynamic lights, TWS pairing and Bluetooth 5.3.",
+  gradient: "from-[#53636c] via-[#283137] to-[#101315]",
+  symbol: "⌁",
+  image: "/images/products/bluetooth-speaker.png",
+  affiliateUrl: "https://amzn.to/4hkmo3G",
+  featured: true,
+},
 ];
