@@ -111,4 +111,18 @@ export const products: Product[] = [
   affiliateUrl: "https://amzn.to/4hkmo3G",
   featured: true,
 },
+{
+  id: 8,
+  name: "AstroAI L7 Portable Tire Inflator",
+  category: "Tech",
+  eyebrow: "ROAD TRIP TECH FIND",
+  price: "View on Amazon",
+  description:
+    "A compact cordless tire inflator with up to 150 PSI pressure, digital gauge, automatic shut-off and built-in emergency light.",
+  gradient: "from-[#d88938] via-[#4a3a2d] to-[#171513]",
+  symbol: "✦",
+  image: "/images/products/astroai-tire-inflator.png",
+  affiliateUrl: "https://amzn.to/4yXI2SB",
+  featured: true,
+},
 ];
