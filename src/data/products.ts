@@ -139,4 +139,18 @@ export const products: Product[] = [
   affiliateUrl: "https://amzn.to/4daqFpn",
   featured: true,
 },
+{
+  id: 10,
+  name: "Airbition Talking Flash Cards",
+  category: "Kids",
+  eyebrow: "PLAY & LEARN FIND",
+  price: "View on Amazon",
+  description:
+    "A screen-free talking flash card set with 224 illustrated words and sounds, designed to make early vocabulary learning interactive and fun.",
+  gradient: "from-[#79b9bd] via-[#4f8f96] to-[#254e55]",
+  symbol: "✦",
+  image: "/images/products/airbition-talking-flash-cards.png",
+  affiliateUrl: "https://amzn.to/4AsvAfc",
+  featured: true,
+},
 ];
