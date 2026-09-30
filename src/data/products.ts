@@ -209,4 +209,18 @@ export const products: Product[] = [
   affiliateUrl: "https://amzn.to/4hWv1Ty",
   featured: true,
 },
+{
+  id: 15,
+  name: "Dove Sensitive Skin Body Wash",
+  category: "Beauty",
+  eyebrow: "GENTLE BODY CARE",
+  price: "View on Amazon",
+  description:
+    "A hypoallergenic body wash designed for sensitive skin, with a moisturizing formula that gently cleanses while helping leave skin soft and hydrated.",
+  gradient: "from-[#d8e8df] via-[#9dbeb0] to-[#496f65]",
+  symbol: "✦",
+  image: "/images/products/dove-sensitive-body-wash.png",
+  affiliateUrl: "https://amzn.to/3TtC90z",
+  featured: true,
+},
 ];
