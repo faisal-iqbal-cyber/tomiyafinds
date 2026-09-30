@@ -153,4 +153,18 @@ export const products: Product[] = [
   affiliateUrl: "https://amzn.to/4AsvAfc",
   featured: true,
 },
+{
+  id: 11,
+  name: "MINTEGRA Multi-Pocket Shoulder Bag",
+  category: "Women",
+  eyebrow: "EVERYDAY WOMEN'S FIND",
+  price: "View on Amazon",
+  description:
+    "A lightweight multi-pocket nylon bag with an adjustable strap and roomy organization, designed for everyday errands, shopping and travel.",
+  gradient: "from-[#8f7968] via-[#493d36] to-[#171514]",
+  symbol: "✦",
+  image: "/images/products/mintegra-shoulder-bag.png",
+  affiliateUrl: "https://amzn.to/4rHfXMX",
+  featured: true,
+},
 ];
