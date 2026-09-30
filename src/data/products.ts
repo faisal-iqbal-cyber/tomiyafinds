@@ -167,4 +167,18 @@ export const products: Product[] = [
   affiliateUrl: "https://amzn.to/4rHfXMX",
   featured: true,
 },
+{
+  id: 12,
+  name: "GOLDEN HOUR Chronograph Watch",
+  category: "Men",
+  eyebrow: "MEN'S STYLE FIND",
+  price: "View on Amazon",
+  description:
+    "A stainless-steel chronograph watch with quartz movement, calendar display and 3ATM water resistance, designed for everyday and business wear.",
+  gradient: "from-[#173b61] via-[#17222d] to-[#0b0d10]",
+  symbol: "◷",
+  image: "/images/products/golden-hour-chronograph-watch.png",
+  affiliateUrl: "https://amzn.to/4hBnYhO",
+  featured: true,
+},
 ];
