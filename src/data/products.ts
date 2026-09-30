@@ -181,4 +181,18 @@ export const products: Product[] = [
   affiliateUrl: "https://amzn.to/4hBnYhO",
   featured: true,
 },
+{
+  id: 13,
+  name: "Stomp Rocket Jr. Multi-Color Launcher",
+  category: "Kids",
+  eyebrow: "OUTDOOR PLAY FIND",
+  price: "View on Amazon",
+  description:
+    "A kid-powered foam rocket launcher with 8 colorful rockets that can soar up to 100 feet, combining active outdoor play with hands-on STEM learning.",
+  gradient: "from-[#63b9e8] via-[#2878a8] to-[#12384f]",
+  symbol: "↗",
+  image: "/images/products/stomp-rocket-jr.png",
+  affiliateUrl: "https://amzn.to/4zsqluX",
+  featured: true,
+},
 ];
