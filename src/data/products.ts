@@ -223,4 +223,18 @@ export const products: Product[] = [
   affiliateUrl: "https://amzn.to/3TtC90z",
   featured: true,
 },
+{
+  id: 16,
+  name: "UBeesize Flexible Phone Tripod",
+  category: "Tech",
+  eyebrow: "CREATOR TECH FIND",
+  price: "View on Amazon",
+  description:
+    "A lightweight flexible phone tripod with a wireless remote, adjustable ball head and wrappable legs for selfies, travel, video recording and content creation.",
+  gradient: "from-[#b58a5d] via-[#55463a] to-[#17191b]",
+  symbol: "◉",
+  image: "/images/products/ubeesize-phone-tripod.png",
+  affiliateUrl: "https://amzn.to/4y0WisZ",
+  featured: true,
+},
 ];
