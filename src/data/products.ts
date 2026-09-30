@@ -237,4 +237,18 @@ export const products: Product[] = [
   affiliateUrl: "https://amzn.to/4y0WisZ",
   featured: true,
 },
+{
+  id: 17,
+  name: "TempPro TempSwift Meat Thermometer",
+  category: "Home",
+  eyebrow: "SMART COOKING FIND",
+  price: "View on Amazon",
+  description:
+    "A fast instant-read digital food thermometer with an auto-rotating backlit display, motion activation and a waterproof design for grilling, baking and everyday cooking.",
+  gradient: "from-[#e8782e] via-[#75452d] to-[#201915]",
+  symbol: "°",
+  image: "/images/products/temppro-tempswift-thermometer.png",
+  affiliateUrl: "https://amzn.to/3TZHYTy",
+  featured: true,
+},
 ];
