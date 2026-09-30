@@ -195,4 +195,18 @@ export const products: Product[] = [
   affiliateUrl: "https://amzn.to/4zsqluX",
   featured: true,
 },
+{
+  id: 14,
+  name: "Vtopmart Stackable Storage Drawers",
+  category: "Home",
+  eyebrow: "SMART HOME ORGANIZATION",
+  price: "View on Amazon",
+  description:
+    "A 4-pack of clear stackable pull-out drawers designed to organize bathroom, pantry, cabinet and under-sink essentials while keeping everything easy to see and access.",
+  gradient: "from-[#d9c3a4] via-[#9c7655] to-[#493629]",
+  symbol: "▦",
+  image: "/images/products/vtopmart-stackable-drawers.png",
+  affiliateUrl: "https://amzn.to/4hWv1Ty",
+  featured: true,
+},
 ];
